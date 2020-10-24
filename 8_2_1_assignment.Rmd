@@ -1,0 +1,27 @@
+---
+title: "Project_8_2_R_Markdown_and_Leaflet"
+author: "Meghana Anumolu"
+date: "10/24/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(leaflet)
+library(htmltools)
+```
+
+
+```{r}
+data_fr_1 <- data.frame("Lahore, Punjab", "<a href='https://en.wikipedia.org/wiki/Lahore'>Lahore</a>", 31.4054167, 74.16363130000002)
+
+data_fr_1 %>%
+  leaflet() %>%
+  addTiles() %>%
+  addMarkers(lat=31.4054167, lng=74.16363130000002, popup="<a href='https://en.wikipedia.org/wiki/Lahore'>Lahore</a>", clusterOptions=markerClusterOptions)
+  
+```
+
